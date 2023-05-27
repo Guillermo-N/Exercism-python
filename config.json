@@ -62,6 +62,14 @@
         "status": "beta"
       },
       {
+        "slug": "electric-bill",
+        "name": "Electric Bill",
+        "uuid": "b2fd556b-07a8-47d6-9811-4d847cf0c6da",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
         "slug": "currency-exchange",
         "name": "Currency Exchange",
         "uuid": "1335ca33-3af0-4720-bcf2-bfa68ffc6862",
@@ -195,7 +203,7 @@
         "name": "Plane Tickets",
         "uuid": "3ba3fc89-3e1b-48a5-aff0-5aeaba8c8810",
         "concepts": ["generators"],
-        "prerequisites": ["conditionals", "dicts", "lists", "loops"],
+        "prerequisites": ["conditionals", "dicts", "lists", "loops", "classes"],
         "status": "wip"
       },
       {
@@ -616,10 +624,10 @@
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "c32f994a-1080-4f05-bf88-051975a75d64",
-        "practices": ["number"],
+        "practices": ["numbers"],
         "prerequisites": [
           "basics",
-          "number",
+          "numbers",
           "conditionals",
           "loops"
         ],
@@ -1259,14 +1267,6 @@
         "difficulty": 3
       },
       {
-        "slug": "diffie-hellman",
-        "name": "Diffie-Hellman",
-        "uuid": "92e2d5f8-7d8a-4e81-a55c-52fa6be80c74",
-        "practices": ["numbers"],
-        "prerequisites": ["basics", "bools", "numbers"],
-        "difficulty": 3
-      },
-      {
         "slug": "connect",
         "name": "Connect",
         "uuid": "5a038ad4-65c7-4c99-9916-faebb4f39b79",
@@ -1452,7 +1452,7 @@
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "fa795dcc-d390-4e98-880c-6e8e638485e3",
-        "practices": ["functions", "function-arguments", "numbers"],
+        "practices": ["functions", "function-arguments"],
         "prerequisites": [
           "basics",
           "bools",
@@ -2207,6 +2207,15 @@
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "b7984882-65df-4993-a878-7872c776592a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "deprecated"
+      },
+      {
+        "slug": "diffie-hellman",
+        "name": "Diffie-Hellman",
+        "uuid": "92e2d5f8-7d8a-4e81-a55c-52fa6be80c74",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
