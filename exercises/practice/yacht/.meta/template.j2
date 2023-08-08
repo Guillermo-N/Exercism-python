@@ -1,9 +1,8 @@
 {%- import "generator_macros.j2" as macros with context -%}
-import unittest
-
-import {{ exercise }}
-
 {{ macros.canonical_ref() }}
+
+import unittest
+import {{ exercise }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -16,5 +15,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
             {{ case["expected"] }})
 
     {% endfor %}
-
-{{ macros.footer() }}

@@ -1,8 +1,11 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(["Clock"])}}
+
 {%- macro clock(obj) -%}
 Clock({{ obj["hour"] }}, {{ obj["minute"] }})
 {%- endmacro -%}
-{{ macros.header(["Clock"])}}
 
 {% set cases = additional_cases + cases %}
 
@@ -29,4 +32,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
 
     {% endfor %}
     {%- endfor %}
-{{ macros.footer() }}

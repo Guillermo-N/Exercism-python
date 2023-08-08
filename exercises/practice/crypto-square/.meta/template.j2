@@ -1,4 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 {{ macros.header(['cipher_text']) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
@@ -9,5 +11,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual(cipher_text(value), expected)
 
     {% endfor %}
-
-{{ macros.footer() }}

@@ -16,7 +16,7 @@
     "highlightjs_language": "python"
   },
   "test_runner": {
-    "average_run_time": 2.0
+    "average_run_time": 2
   },
   "files": {
     "solution": ["%{snake_slug}.py"],
@@ -162,6 +162,14 @@
         "concepts": ["dicts"],
         "prerequisites": ["loops", "lists", "tuples"],
         "status": "beta"
+      },
+      {
+        "slug": "mecha-munch-management",
+        "name": "Mecha Munch Management",
+        "uuid": "5ac0c40c-4038-47b8-945b-8480e4a3f44c",
+        "concepts": ["dict-methods"],
+        "prerequisites": ["dicts"],
+        "status": "wip"
       },
       {
         "slug": "locomotive-engineer",
@@ -703,14 +711,6 @@
         "difficulty": 2
       },
       {
-        "slug": "yacht",
-        "name": "Yacht",
-        "uuid": "22f937e5-52a7-4956-9dde-61c985251a6b",
-        "practices": ["bools"],
-        "prerequisites": ["basics", "bools", "numbers"],
-        "difficulty": 2
-      },
-      {
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "bf30b17f-6b71-4bb5-815a-88f8181b89ae",
@@ -878,6 +878,14 @@
         "difficulty": 2
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "22f937e5-52a7-4956-9dde-61c985251a6b",
+        "practices": ["enums"],
+        "prerequisites": ["basics", "bools", "numbers", "classes"],
+        "difficulty": 2
+      },
+      {
         "slug": "sublist",
         "name": "Sublist",
         "uuid": "cc5eb848-09bc-458c-8fb6-3a17687cb4eb",
@@ -986,6 +994,21 @@
           "numbers",
           "strings",
           "string-methods"
+        ],
+        "difficulty": 3
+      },
+      {
+        "slug": "resistor-color-expert",
+        "name": "Resistor Color Expert",
+        "uuid": "8a738365-0efa-444f-9466-a757ddaddcdb",
+        "practices": ["list-methods"],
+        "prerequisites": [
+          "basics",
+          "bools",
+          "lists",
+          "numbers",
+          "strings",
+          "comparisons"
         ],
         "difficulty": 3
       },
@@ -2255,6 +2278,11 @@
       "name": "Binary Data"
     },
     {
+      "uuid": "78dbf248-a1e5-48cb-ba53-def4d92bf2a8",
+      "slug": "binary-octal-hexadecimal",
+      "name": "Binary, Octal, and Hexadecimal"
+    },
+    {
       "uuid": "f8e96e60-f746-4c7a-8dc9-df6b77eefdfa",
       "slug": "bitflags",
       "name": "Bitflags"
@@ -2326,8 +2354,8 @@
     },
     {
       "uuid": "ba20a459-99ac-4643-b386-8b90e9c94328",
-      "slug": "dataclasses-and-namedtuples",
-      "name": "Dataclasses And Namedtuples"
+      "slug": "dataclasses",
+      "name": "Dataclasses"
     },
     {
       "uuid": "48ef77af-50f5-466e-a537-bcd016550058",

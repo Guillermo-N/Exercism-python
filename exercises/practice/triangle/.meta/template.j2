@@ -1,4 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 {{ macros.header(["equilateral", "isosceles", "scalene"]) }}
 
 {% for case in cases -%}
@@ -9,4 +11,3 @@ class {{ case["description"] | camel_case }}Test(unittest.TestCase):
 
     {% endfor %}
 {% endfor %}
-{{ macros.footer() }}

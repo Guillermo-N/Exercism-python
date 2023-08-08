@@ -1,4 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 {{ macros.header()}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
@@ -8,5 +10,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual(
             {{ case["property"] | to_snake }}({{ input["hands"] }}), {{ case["expected"] }})
     {% endfor %}
-
-{{ macros.footer() }}

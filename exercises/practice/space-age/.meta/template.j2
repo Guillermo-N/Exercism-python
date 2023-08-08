@@ -1,4 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 {{ macros.header(["SpaceAge"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
@@ -9,5 +11,4 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual(SpaceAge({{ seconds }}).on_{{ planet | lower }}(), {{ case["expected"] }})
 
     {% endfor %}
-
-{{ macros.footer() }}
+    

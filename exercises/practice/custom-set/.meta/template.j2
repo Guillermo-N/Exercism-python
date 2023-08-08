@@ -1,4 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 {% set class_name = exercise | camel_case -%}
 {{ macros.header([class_name]) }}
 
@@ -44,5 +46,4 @@ class {{ class_name }}Test(unittest.TestCase):
         {% endif %}
     {% endfor %}
     {% endfor %}
-
-{{ macros.footer() }}
+    

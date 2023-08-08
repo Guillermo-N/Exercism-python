@@ -1,4 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 {{ macros.header(imports=imports, ignore=ignore) }}
 
 {%- macro test_cases_recursive(cases) -%}
@@ -25,4 +27,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
     # Additional tests for this track
     {{ additional_tests() }}
     {%- endif %}
-{{ macros.footer() }}

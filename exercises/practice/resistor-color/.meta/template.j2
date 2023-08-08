@@ -1,5 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
-{{ macros.header() }}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
     {% for case in cases -%}
@@ -14,5 +16,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{ case["property"] | to_snake }}(), expected)
     {%- endif -%}
     {% endfor %}
-
-{{ macros.footer() }}

@@ -17,12 +17,13 @@ import sys
 from githelp import Repo
 
 _py = sys.version_info
-if _py.major < 3 or (_py.major == 3 and _py.minor < 6):
-    print("Python version must be at least 3.6")
+if _py.major < 3 or (_py.major == 3 and _py.minor < 7):
+    print("Python version must be at least 3.7")
     sys.exit(1)
 
 import argparse
 from datetime import datetime
+from datetime import timezone
 import difflib
 import filecmp
 import importlib.util
@@ -260,6 +261,19 @@ def format_file(path: Path) -> NoReturn:
 
 
 def check_template(slug: str, tests_path: Path, tmpfile: Path):
+    """Generate a new test file and diff against existing file.
+
+    Note:  The timestamp in each test file creates issues with
+           Python difflib, so it is skipped when being prepped
+           for diff.
+
+           You can see this "skipping" on lines 281 & 283.
+           However, this rather crude method creates
+           an empty "false positive" diff.  This empty diff is
+           then skipped in lines 293 & 294, so that it can be
+           considered a pass..
+    """
+
     try:
         check_ok = True
         if not tmpfile.is_file():
@@ -270,20 +284,25 @@ def check_template(slug: str, tests_path: Path, tmpfile: Path):
             check_ok = False
         if check_ok and not filecmp.cmp(tmpfile, tests_path):
             with tests_path.open() as f:
-                current_lines = f.readlines()
+                current_lines = f.readlines()[3:]
             with tmpfile.open() as f:
-                rendered_lines = f.readlines()
-            diff = difflib.unified_diff(
+                rendered_lines = f.readlines()[3:]
+
+            diff = list(difflib.unified_diff(
                 current_lines,
                 rendered_lines,
                 fromfile=f"[current] {tests_path.name}",
                 tofile=f"[generated] {tmpfile.name}",
-            )
-            logger.debug(f"{slug}: ##### DIFF START #####")
-            for line in diff:
-                logger.debug(line.strip())
-            logger.debug(f"{slug}: ##### DIFF END #####")
-            check_ok = False
+                lineterm="\n",
+            ))
+            if not diff:
+                check_ok = True
+            else:
+                logger.debug(f"{slug}: ##### DIFF START #####")
+                for line in diff:
+                    logger.debug(line.strip())
+                logger.debug(f"{slug}: ##### DIFF END #####")
+                check_ok = False
         if not check_ok:
             logger.error(
                 f"{slug}: check failed; tests must be regenerated with bin/generate_tests.py"
@@ -393,6 +412,7 @@ def generate(
     env.filters["zip"] = zip
     env.filters["parse_datetime"] = parse_datetime
     env.filters["escape_invalid_escapes"] = escape_invalid_escapes
+    env.globals["current_date"] = datetime.now(tz=timezone.utc).date()
     env.tests["error_case"] = error_case
     result = True
     for exercise in sorted(Path("exercises/practice").glob(exercise_glob)):

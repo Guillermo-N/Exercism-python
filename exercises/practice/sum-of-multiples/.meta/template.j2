@@ -1,4 +1,6 @@
 {%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
 {{ macros.header(["sum_of_multiples"]) }}
 
 class {{ exercise | camel_case }}Test(unittest.TestCase):
@@ -7,5 +9,3 @@ class {{ exercise | camel_case }}Test(unittest.TestCase):
         self.assertEqual({{ case["property"].replace("sum", "sum_of_multiples") }}({{ case["input"]["limit"] }}, {{ case["input"]["factors"] }}), {{ case["expected"] }})
 
     {% endfor %}
-
-{{ macros.footer() }}
