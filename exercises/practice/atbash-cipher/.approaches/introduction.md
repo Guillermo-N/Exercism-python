@@ -10,7 +10,7 @@ For decoding, it's similar - clean up (which automatically joins the chunks) and
 
 ## Approach: separate functions
 We use `str.maketrans` to create the encoding. 
-In `encode`, we use a [generator expression][generator expression] in `str.join`.
+In `encode`, we use a [generator expression][generator-expression] in `str.join`.
 ```python
 from string import ascii_lowercase
 ENCODING = str.maketrans(ascii_lowercase, ascii_lowercase[::-1])
@@ -22,7 +22,7 @@ def encode(text: str):
 def decode(text: str):
     return "".join(chr.lower() for chr in text if chr.isalnum()).translate(ENCODING)
 ```
-Read more on this [approach here][approach-seperate-functions].
+Read more on this [approach here][approach-separate-functions].
 
 ## Approach: mono-function
 Notice that there the majority of the code is repetitive? 
@@ -43,4 +43,4 @@ For more detail, [read here][approach-mono-function].
 
 [approach-separate-functions]: https://exercism.org/tracks/python/exercises/atbash-cipher/approaches/separate-functions
 [approach-mono-function]: https://exercism.org/tracks/python/exercises/atbash-cipher/approaches/mono-function
-[generator expression]: https://www.programiz.com/python-programming/generator
+[generator-expression]: https://www.programiz.com/python-programming/generator

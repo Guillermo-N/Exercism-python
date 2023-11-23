@@ -18,6 +18,7 @@ Some of the more commonly used `str` methods include:
 
 Being _immutable_, a `str` object's value in memory cannot change; methods that appear to modify a string return a new copy or instance of that `str` object.
 
+
 [`<str>.endswith(<suffix>)`][str-endswith] returns `True` if the string ends with `<suffix>`, `False` otherwise.
 
 ```python
@@ -41,13 +42,13 @@ There may also be [locale][locale] rules in place for a language or character se
 
 
 ```python
->>> man_in_hat_th = 'ู้ชายในหมวก'
+>>> man_in_hat_th = 'ผู้ชายใส่หมวก'
 >>> man_in_hat_ru = 'mужчина в шляпе'
 >>> man_in_hat_ko = '모자를 쓴 남자'
 >>> man_in_hat_en = 'the man in the hat.'
 
 >>> man_in_hat_th.title()
-'ผู้ชายในหมวก'
+'ผู้ชายใส่หมวก'
 
 >>> man_in_hat_ru.title()
 'Мужчина В Шляпе'
