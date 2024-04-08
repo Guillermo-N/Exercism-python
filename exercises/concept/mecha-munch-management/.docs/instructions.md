@@ -17,11 +17,11 @@ Create the function `add_items(<current_cart>, <items_to_add>)` that takes a car
 It should return a new/updated shopping cart dictionary for the user.
 
 ```python
->>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1}, 
+>>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1},
               ('Apple', 'Apple', 'Orange', 'Apple', 'Banana'))
 {'Banana': 4, 'Apple': 5, 'Orange': 2}
 
->>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1}, 
+>>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1},
               ['Banana', 'Orange', 'Blueberries', 'Banana'])
 {'Banana': 5, 'Apple': 2, 'Orange': 2, 'Blueberries': 1}
 ```
@@ -94,17 +94,17 @@ Create the function `sort_entries(<cart>)` that takes a shopping cart/dictionary
 ## 5. Send User Shopping Cart to Store for Fulfillment
 
 The app needs to send a given users cart to the store for fulfillment.
-However, the shoppers in the store need to know which store isle the item can be found in and if the item needs refrigeration.
+However, the shoppers in the store need to know which store aisle the item can be found in and if the item needs refrigeration.
 So (_rather arbitrarily_) the "fulfillment cart" needs to be sorted in reverse alphabetical order with item quantities combined with location and refrigeration information.
 
-Create the function `send_to_store(<cart>, <isle_mapping>)` that takes a user shopping cart and a dictionary that has store isle number and a `True`/`False` for refrigeration needed for each item.
-The function should `return` a combined "fulfillment cart" that has (quantity, isle, and refrigeration) for each item the customer is ordering.
+Create the function `send_to_store(<cart>, <aisle_mapping>)` that takes a user shopping cart and a dictionary that has store aisle number and a `True`/`False` for refrigeration needed for each item.
+The function should `return` a combined "fulfillment cart" that has (quantity, aisle, and refrigeration) for each item the customer is ordering.
 Items should appear in _reverse_ alphabetical order.
 
 ```python
->>> send_to_store({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2}, 
-                  {'Banana': ['Isle 5', False], 'Apple': ['Isle 4', False], 'Orange': ['Isle 4', False], 'Milk': ['Isle 2', True]})
-{'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True], 'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]}
+>>> send_to_store({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2},
+                  {'Banana': ['Aisle 5', False], 'Apple': ['Aisle 4', False], 'Orange': ['Aisle 4', False], 'Milk': ['Aisle 2', True]})
+{'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]}
 ```
 
 ## 6. Update the Store Inventory to Reflect what a User Has Ordered.
@@ -119,10 +119,10 @@ The function should reduce the store inventory amounts by the number "ordered" i
 Where a store item count falls to 0, the count should be replaced by the message 'Out of Stock'.
 
 ```python
->>> update_store_inventory({'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True], 'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]}, 
-{'Banana': [15, 'Isle 5', False], 'Apple': [12, 'Isle 4', False], 'Orange': [1, 'Isle 4', False], 'Milk': [4, 'Isle 2', True]})
+>>> update_store_inventory({'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]},
+{'Banana': [15, 'Aisle 5', False], 'Apple': [12, 'Aisle 4', False], 'Orange': [1, 'Aisle 4', False], 'Milk': [4, 'Aisle 2', True]})
 
-{'Banana': [12, 'Isle 5', False], 'Apple': [10, 'Isle 4', False], 'Orange': ['Out of Stock', 'Isle 4', False], 'Milk': [2, 'Isle 2', True]}
+{'Banana': [12, 'Aisle 5', False], 'Apple': [10, 'Aisle 4', False], 'Orange': ['Out of Stock', 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True]}
 ```
 
 [feature creep]: https://en.wikipedia.org/wiki/Feature_creep

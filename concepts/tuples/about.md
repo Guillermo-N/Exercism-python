@@ -98,7 +98,7 @@ Other data structures can be included as `tuple` elements, including other `tupl
 >>> nested_data_structures = ({"fish": "gold", "monkey": "brown", "parrot" : "grey"}, ("fish", "mammal", "bird"))
 ({"fish": "gold", "monkey": "brown", "parrot" : "grey"}, ("fish", "mammal", "bird"))
 
->>> nested_data_structures_1 : (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
+>>> nested_data_structures_1 = (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
 (["fish", "gold", "monkey", "brown", "parrot", "grey"], ("fish", "mammal", "bird"))
 ```
 
@@ -219,11 +219,11 @@ Additionally, users can adapt a [`dataclass`][dataclass] to provide similar name
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [dataclass pros and cons]: https://stackoverflow.com/questions/51671699/data-classes-vs-typing-namedtuple-primary-use-cases
 [dataclass]: https://docs.python.org/3/library/dataclasses.html
-[dict]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/dict.md
+[dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 [hashability]: https://docs.python.org/3/glossary.html#hashable
-[list]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/list.md
+[list]: https://docs.python.org/3/library/stdtypes.html#list
 [mutable sequence operations]: https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
 [namedtuple]: https://docs.python.org/3/library/collections.html#collections.namedtuple
 [sequence]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
-[set]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/set.md
-[tuple]: https://github.com/exercism/v3/blob/master/languages/python/reference/concepts/builtin_types/tuple.md
+[set]: https://docs.python.org/3/library/stdtypes.html#set
+[tuple]: https://docs.python.org/3/library/stdtypes.html#tuple

@@ -169,7 +169,7 @@
         "uuid": "5ac0c40c-4038-47b8-945b-8480e4a3f44c",
         "concepts": ["dict-methods"],
         "prerequisites": ["dicts"],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "locomotive-engineer",
@@ -225,7 +225,6 @@
           "comprehensions",
           "loops",
           "sequences",
-          "string-formatting",
           "string-methods",
           "tuples"
         ],
@@ -940,7 +939,6 @@
           "loops",
           "numbers",
           "strings",
-          "string-formatting",
           "string-methods"
         ],
         "difficulty": 2
@@ -988,7 +986,7 @@
         "difficulty": 2
       },
       {
-        "slug": "pop-count",
+        "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "356e2d29-7efc-4fa3-bec7-8b61c3e967da",
         "practices": ["loops"],
@@ -2165,15 +2163,6 @@
         "status": "deprecated"
       },
       {
-        "slug": "nucleotide-count",
-        "name": "Nucleotide Count",
-        "uuid": "105f25ec-7ce2-4797-893e-05e3792ebd91",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "status": "deprecated"
-      },
-      {
         "slug": "binary",
         "name": "Binary",
         "uuid": "49127efa-1124-4f27-bee4-99992e3433de",
@@ -2204,15 +2193,6 @@
         "slug": "octal",
         "name": "Octal",
         "uuid": "4094d27f-4d03-4308-9fd7-9f3de312afec",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "status": "deprecated"
-      },
-      {
-        "slug": "parallel-letter-frequency",
-        "name": "Parallel Letter Frequency",
-        "uuid": "da03fca4-4606-48d8-9137-6e40396f7759",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -2264,7 +2244,7 @@
         "status": "deprecated"
       }
     ],
-    "foregone": ["lens-person"]
+    "foregone": ["lens-person", "nucleotide-count", "parallel-letter-frequency"]
   },
   "concepts": [
     {
@@ -2601,6 +2581,11 @@
       "uuid": "000e7768-38b9-4904-9ae2-9a4e448f366c",
       "slug": "fractions",
       "name": "Fractions"
+    },
+    {
+      "uuid": "e1496136-8d58-4409-9a41-4b6ee4721c6b",
+      "slug": "secrets",
+      "name": "Secrets"
     }
   ],
   "key_features": [
